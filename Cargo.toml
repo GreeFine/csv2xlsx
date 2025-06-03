@@ -9,8 +9,8 @@ documentation = "https://docs.rs/csv2xlsx/"
 homepage = "https://github.com/jacobsvante/csv2xlsx"
 
 [dependencies]
-anyhow = "1.0.57"
-clap = { version = "3.1.18", features = ["derive"] }
-csv = "1.1.6"
-simple_excel_writer = "0.2.0"
-unescape = "0.1.0"
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+csv = "1.1"
+simple_excel_writer = "0.2"
+unescape = "0.1"

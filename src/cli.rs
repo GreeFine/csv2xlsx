@@ -9,13 +9,13 @@ pub fn parse() -> Opts {
 /// Convert CSV to Excel
 #[derive(Debug, Parser)]
 pub struct Opts {
-    #[clap(short, long, parse(from_os_str), default_value = "/dev/stdin")]
+    #[clap(short, long, default_value = "/dev/stdin")]
     pub input_file: PathBuf,
     /// Where to write output. Defaults to standard output.
-    #[clap(short, long, parse(from_os_str), default_value = "/dev/stdout")]
+    #[clap(short, long, default_value = "/dev/stdout")]
     pub output_file: PathBuf,
     /// Delimiter used in the CSV file
-    #[clap(short, long, default_value_t = DEFAULT_DELIMITER, parse(try_from_str = unescape_char))]
+    #[clap(short, long, default_value_t = DEFAULT_DELIMITER, value_parser = unescape_char)]
     pub delimiter: char,
     /// Automatically adjust widths for each column based on their content
     #[clap(short, long)]
